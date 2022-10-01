@@ -10,7 +10,7 @@ namespace LudumDare51.Infrastructure
         {
             var daoLevelTextureMapperConfiguration = DaoServiceLocator.GetInstance().GetService<DaoLevelTextureMapperConfiguration>();
             var levelTextureMapperConfiguration = daoLevelTextureMapperConfiguration.GetLevelTextureMapperConfiguration();
-            var level = new LevelFactory().Create(LevelId.Level01);
+            var level = new LevelFactory().Create(LevelId.Level02);
 
             var levelLoadedResponse = new LevelLoadedResponse();
             levelLoadedResponse.map = level.GetMap(); 

@@ -1,4 +1,4 @@
-namespace _Project.Dao
+namespace LudumDare51.Dao
 {
     public interface Dao
     {

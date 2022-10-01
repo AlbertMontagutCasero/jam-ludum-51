@@ -1,4 +1,4 @@
-namespace _Project.Interactor
+namespace LudumDare51.Interactor
 {
     /**
      * Every method in classes that implements this interface should

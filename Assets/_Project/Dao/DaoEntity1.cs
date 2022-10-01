@@ -1,6 +1,6 @@
-using _Project.Domain;
+using LudumDare51.Domain;
 
-namespace _Project.Dao
+namespace LudumDare51.Dao
 {
     public class DaoEntity1: Dao
     {

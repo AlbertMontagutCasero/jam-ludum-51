@@ -1,10 +1,9 @@
-using _Project.Interactor;
-using DefaultNamespace;
+using LudumDare51.Interactor;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace _Project.Infrastructure
+namespace LudumDare51.Infrastructure
 {
     public class Example1View: MonoBehaviour
     {

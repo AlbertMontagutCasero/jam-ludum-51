@@ -1,6 +1,6 @@
 using Puzzle.ServiceLocator;
 
-namespace _Project.Interactor
+namespace LudumDare51.Interactor
 {
     public class InteractorServiceLocator: ServiceLocator<Interactor>
     {

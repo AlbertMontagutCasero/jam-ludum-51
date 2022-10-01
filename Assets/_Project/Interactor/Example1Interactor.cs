@@ -1,8 +1,7 @@
-using _Project.Dao;
-using _Project.Domain;
-using DefaultNamespace;
+using LudumDare51.Dao;
+using LudumDare51.Domain;
 
-namespace _Project.Interactor
+namespace LudumDare51.Interactor
 {
     public class Example1Interactor: Interactor
     {

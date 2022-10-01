@@ -1,6 +1,6 @@
 using Puzzle.ServiceLocator;
 
-namespace _Project.Dao
+namespace LudumDare51.Dao
 {
     public class DaoServiceLocator: ServiceLocator<Dao>
     {

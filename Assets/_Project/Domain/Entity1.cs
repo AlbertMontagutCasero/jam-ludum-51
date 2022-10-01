@@ -1,4 +1,4 @@
-namespace _Project.Domain
+namespace LudumDare51.Domain
 {
     public class Entity1
     {

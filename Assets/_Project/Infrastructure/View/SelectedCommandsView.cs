@@ -20,7 +20,6 @@ namespace LudumDare51.Infrastructure
 
         private void OnCommandSelected(CommandSelectedResponse commandSelectedResponse)
         {
-            Debug.Log($"num of command selected {commandSelectedResponse.GetNumberOfSelected()}");
             this.RefreshCommandButtonsVisibility(commandSelectedResponse.commandDto);
         }
 
@@ -33,9 +32,8 @@ namespace LudumDare51.Infrastructure
                 var currentButton = this.buttons[i];
                 currentButton.gameObject.SetActive(true);   
                 
-                // TODO set sprite
-                    // var currentDto = commandDtos[i];
-                // currentButton.image.sprite;
+                var currentConfiguration = commandDtos[i].commandConfiguration;
+                currentButton.image.sprite = currentConfiguration.GetTexture();
             }
         }
 

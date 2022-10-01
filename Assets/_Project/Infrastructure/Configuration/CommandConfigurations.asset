@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67823b1d8b654686a01376c1125af2a2, type: 3}
+  m_Name: CommandConfigurations
+  m_EditorClassIdentifier: 
+  commandConfigurations:
+  - commandId: 0
+    texture: {fileID: 21300000, guid: 7b3ac449ca0892d4a93b1b5a82c33750, type: 3}
+  - commandId: 1
+    texture: {fileID: 21300000, guid: 58713fbacadb47044b7e96180963b047, type: 3}
+  - commandId: 2
+    texture: {fileID: 21300000, guid: c80f934dac5a59f4bb46116401d86fe7, type: 3}
+  - commandId: 3
+    texture: {fileID: 21300000, guid: 0250cef8ca230a34c98469278394f0e3, type: 3}
+  - commandId: 4
+    texture: {fileID: 21300000, guid: bb8e0727e87243548bfd38bcfcbb8663, type: 3}
+  - commandId: 5
+    texture: {fileID: 21300000, guid: ec9e24f93795d934d9caa0fc4158598a, type: 3}
+  - commandId: 6
+    texture: {fileID: 21300000, guid: 05a9a91922393334ab873daccc55873c, type: 3}

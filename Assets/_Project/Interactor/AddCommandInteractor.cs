@@ -1,13 +1,16 @@
 using System.Collections.Generic;
 using LudumDare51.Dao;
 using LudumDare51.Domain;
+using UnityEngine;
 
 namespace LudumDare51.Interactor
 {
     public class AddCommandInteractor: Interactor
     {
-        public void AddCommand()
+        public void AddCommand(CommandId commandId)
         {
+            Debug.Log(commandId);
+            
             var daoCommandSelectedSupervisor = DaoServiceLocator.GetInstance().GetService<DaoCommandSelectedSupervisor>();
             var commandsSelectedSupervisor = daoCommandSelectedSupervisor.GetCommandSupervisor();
 

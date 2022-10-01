@@ -4,7 +4,8 @@ namespace LudumDare51.Domain
 {
     public class CommandsSelectedSupervisor
     {
-        private readonly List<Command> commands = new List<Command>();
+        private readonly List<Command> commands = new();
+        private int currentCommand = 0;
 
         public void RemoveCommands()
         {
@@ -20,14 +21,16 @@ namespace LudumDare51.Domain
         {
             return this.commands;
         }
-        
-        public void Execute()
+
+        public void ExecuteNextCommand()
         {
-            for (var i = 0; i < this.commands.Count; i++)
-            {
-                var currentCommand = this.commands[i];
-                currentCommand.Execute();
-            }
+            var currentCommand = this.commands[this.currentCommand];
+            currentCommand.Execute();
+        }
+
+        public void GoToNextCommand()
+        {
+            this.currentCommand++;
         }
     }
 }

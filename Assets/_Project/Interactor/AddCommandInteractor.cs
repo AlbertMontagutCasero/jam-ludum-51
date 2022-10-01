@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using LudumDare51.Dao;
 using LudumDare51.Domain;
-using UnityEngine;
 
 namespace LudumDare51.Interactor
 {
@@ -18,9 +17,9 @@ namespace LudumDare51.Interactor
             {
                 return;
             }
-            
-            var commandMovement = new CommandMovement(commandId);
-            commandsSelectedSupervisor.AddCommand(commandMovement);
+
+            var command = new CommandFactory().Create(commandId);
+            commandsSelectedSupervisor.AddCommand(command);
             this.SendCommandsUpdatedSignal();
         }
         

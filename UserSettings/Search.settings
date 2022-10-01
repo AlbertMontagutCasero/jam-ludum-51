@@ -10,9 +10,12 @@ scopes = {
 	"last_search.2138236A" = "view"
 	"OpenInspectorPreview.2138236A" = "0"
 	"currentGroup.2138236A" = "menu"
-	"last_search.F8949528" = "view"
+	"last_search.F8949528" = "f5e0b4bef92b747f3808dfd542e03a55"
 	"OpenInspectorPreview.F8949528" = "0"
 	"currentGroup.F8949528" = "all"
+	"last_search.DD5CDD96" = "f5e0b4bef92b747f3808dfd542e03a55"
+	"OpenInspectorPreview.DD5CDD96" = "0"
+	"currentGroup.DD5CDD96" = "all"
 }
 providers = {
 	find = {
@@ -59,6 +62,8 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"f5e0b4bef92b747f3808dfd542e03a55"
+	"2637138737674338844"
 ]
 searchItemFavorites = [
 ]

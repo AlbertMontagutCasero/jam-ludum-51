@@ -6,7 +6,7 @@ namespace LudumDare51.Domain
     {
         private readonly List<Command> commands = new List<Command>();
 
-        public void DeleteCommands()
+        public void RemoveCommands()
         {
             this.commands.Clear();
         }
@@ -15,10 +15,19 @@ namespace LudumDare51.Domain
         {
             this.commands.Add(command);
         }
-    }
-
-    public interface Command
-    {
-        void Execute();
+        
+        public List<Command> GetCommands()
+        {
+            return this.commands;
+        }
+        
+        public void Execute()
+        {
+            for (var i = 0; i < this.commands.Count; i++)
+            {
+                var currentCommand = this.commands[i];
+                currentCommand.Execute();
+            }
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace LudumDare51.Infrastructure.Installer
             
             // INTERACTOR
             InteractorServiceLocator.GetInstance().RegisterService(new AddCommandInteractor());
+            InteractorServiceLocator.GetInstance().RegisterService(new RemoveSelectedCommandsInteractor());
         }
     }
 }

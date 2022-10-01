@@ -11,13 +11,6 @@ namespace LudumDare51.Infrastructure
         private void Awake()
         {
             this.executeAddMovementCommandUseCaseButton.onClick.AddListener(this.OnExecuteAddMovementCommandUseCaseButtonClick);
-            
-            GameSignals.OnCommandSelected += OnCommandSelected;
-        }
-
-        private void OnCommandSelected()
-        {
-            Debug.Log("FEEDBACK");
         }
 
         private void OnExecuteAddMovementCommandUseCaseButtonClick()

@@ -9,6 +9,6 @@ namespace LudumDare51.Interactor
         public static Action OnCreated;
         
         // GAME
-        public static Action OnCommandSelected;
+        public static Action<CommandSelectedResponse> OnCommandSelected;
     }
 }

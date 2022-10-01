@@ -4,24 +4,19 @@ using LudumDare51.Domain;
 
 namespace LudumDare51.Interactor
 {
-    public class AddCommandInteractor: Interactor
+    public class RemoveSelectedCommandsInteractor: Interactor
     {
-        public void AddCommand()
+        public void RemoveAllSelectedCommands()
         {
-            var daoCommandSelectedSupervisor = DaoServiceLocator.GetInstance().GetService<DaoCommandSelectedSupervisor>();
-            var commandsSelectedSupervisor = daoCommandSelectedSupervisor.GetCommandSupervisor();
-
-            var maxCommands = 10;
-            var numberOfCurrentCommands = commandsSelectedSupervisor.GetCommands().Count; 
-            if (numberOfCurrentCommands >= maxCommands)
-            {
-                return;
-            }
+            var selectedCommandsSupervisor = DaoServiceLocator.GetInstance().GetService<DaoCommandSelectedSupervisor>();
+            var commandsSelectedSupervisor = selectedCommandsSupervisor.GetCommandSupervisor();
             
-            var commandMovement = new CommandMovement(CommandId.MovementUp);
-            commandsSelectedSupervisor.AddCommand(commandMovement);
+            commandsSelectedSupervisor.RemoveCommands();
+            
             this.SendCommandsUpdatedSignal();
         }
+        
+        
         private void SendCommandsUpdatedSignal()
         {
             var selectedCommandsSupervisor = DaoServiceLocator.GetInstance().GetService<DaoCommandSelectedSupervisor>();

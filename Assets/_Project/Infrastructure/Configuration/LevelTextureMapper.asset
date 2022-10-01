@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9685c9b1a3474b4f805d7bd880d25b5b, type: 3}
+  m_Name: LevelTextureMapper
+  m_EditorClassIdentifier: 
+  floorTextures:
+  - floorId: 0
+    sprite: {fileID: 21300000, guid: 3b9bf4020e58826499434f980ff168f4, type: 3}
+  - floorId: 1
+    sprite: {fileID: 21300000, guid: ca3f09f4d78d1fe4f97b94b3334db0d6, type: 3}
+  cosmeticTextures:
+  - cosmeticId: 0
+    sprite: {fileID: 0}
+  - cosmeticId: 1
+    sprite: {fileID: 21300000, guid: 6db1da9c19fd3694f8a7961a2a2ab66b, type: 3}

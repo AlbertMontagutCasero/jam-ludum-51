@@ -10,5 +10,6 @@ namespace LudumDare51.Interactor
         
         // GAME
         public static Action<CommandSelectedResponse> OnCommandSelected;
+        public static Action<LevelLoadedResponse> OnLevelLoaded;
     }
 }

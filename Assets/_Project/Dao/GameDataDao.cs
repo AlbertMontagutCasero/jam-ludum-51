@@ -10,9 +10,13 @@ namespace LudumDare51.Dao
         public int racoonsCaught;
         public GameplayConfiguration gameplayConfiguration;
 
+        public bool shouldGiveAnotherClue = true;
+        public int clueGiven = 0;
+
         public GameDataDao(GameplayConfiguration gameplayConfiguration)
         {
             this.gameplayConfiguration = gameplayConfiguration;
+            this.remainingSecondsToClue = 10;
         }
 
         public void AddTime(float elapsedSeconds)
@@ -23,6 +27,8 @@ namespace LudumDare51.Dao
             if (this.remainingSecondsToClue < 0)
             {
                 this.remainingSecondsToClue += 10;
+                this.clueGiven++;
+                this.shouldGiveAnotherClue = true;
             }
         }
 

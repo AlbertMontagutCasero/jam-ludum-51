@@ -15,5 +15,6 @@ namespace LudumDare51.Interactor
         public static Action<GameDataDao> OnGameplayFinishes;
         public static Action<float> OnTimePenalization;
         public static Action OnRacoonCaught;
+        public static Action<int> OnCheckClue;
     }
 }

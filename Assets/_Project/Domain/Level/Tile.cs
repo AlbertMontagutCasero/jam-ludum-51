@@ -1,3 +1,5 @@
+using _Project.Infrastructure.UnityConfiguration;
+
 namespace LudumDare51.Domain
 {
     public class Tile
@@ -5,6 +7,7 @@ namespace LudumDare51.Domain
         private FloorId floorId;
         private CosmeticId cosmeticId;
         private InteractionId interactionsId;
+        private CosmeticItemPreset cosmeticItemPreset;
 
         public Tile(FloorId floorId, CosmeticId cosmeticId, InteractionId interactionsId)
         {
@@ -26,6 +29,11 @@ namespace LudumDare51.Domain
         public InteractionId GetInteractionsId()
         {
             return this.interactionsId;
+        }
+
+        public void SetCosmeticConfig(CosmeticItemPreset config)
+        {
+            this.cosmeticItemPreset = config;
         }
     }
 }

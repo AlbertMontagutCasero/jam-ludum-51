@@ -9,6 +9,8 @@ namespace LudumDare51.Infrastructure.Installer
     {
         [SerializeField] private CommandsConfiguration commandsConfiguration;
         [SerializeField] private LevelTextureMapperConfiguration levelTextureMapperConfiguration;
+        [SerializeField] private CosmeticConfigurationList cosmeticConfigurationList;
+        
         
         private void Awake()
         {
@@ -17,6 +19,7 @@ namespace LudumDare51.Infrastructure.Installer
             // DAO
             DaoServiceLocator.GetInstance().RegisterService(new DaoCommandSelectedSupervisor(this.commandsConfiguration));
             DaoServiceLocator.GetInstance().RegisterService(new DaoLevelTextureMapperConfiguration(this.levelTextureMapperConfiguration));
+            DaoServiceLocator.GetInstance().RegisterService(new DaoLevel(this.cosmeticConfigurationList));
             
             // INTERACTOR
             InteractorServiceLocator.GetInstance().RegisterService(new AddCommandInteractor());

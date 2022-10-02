@@ -51,7 +51,7 @@ namespace LudumDare51.Domain
             var cosmeticLayer = new CosmeticLayer(cosmeticIds);
             var interactionLayer = new InteractionLayer(interactionIds);
             var map = new Map(floorLayer, cosmeticLayer, interactionLayer);
-            return new Level(LevelId.Level01, map);
+            return new Level(LevelId.Level1, map);
         }
     }
 }

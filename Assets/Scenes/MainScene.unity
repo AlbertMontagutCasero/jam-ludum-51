@@ -780,6 +780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commandsConfiguration: {fileID: 11400000, guid: e1d815402fb3349acbbe11d22e2aaf66, type: 2}
   levelTextureMapperConfiguration: {fileID: 11400000, guid: 5a54b47d051ca4602818ff778c9d03c6, type: 2}
+  cosmeticConfigurationList: {fileID: 11400000, guid: 9823cb41df54f4f97b8731943314ebc7, type: 2}
 --- !u!1 &1870407873
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,3 +22,5 @@ MonoBehaviour:
     sprite: {fileID: 0}
   - cosmeticId: 1
     sprite: {fileID: 21300000, guid: 6db1da9c19fd3694f8a7961a2a2ab66b, type: 3}
+  - cosmeticId: 2
+    sprite: {fileID: 21300000, guid: 88aa4a9c192b501428eaabdd851688e1, type: 3}

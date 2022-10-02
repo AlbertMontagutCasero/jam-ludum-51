@@ -2,10 +2,10 @@ namespace LudumDare51.Domain
 {
     public enum LevelId
     {
-        Level01,
-        Level02,
-        Level03,
-        Level04,
-        Level05,
+        Level1,
+        Level2,
+        Level3,
+        Level4,
+        Level5,
     }
 }

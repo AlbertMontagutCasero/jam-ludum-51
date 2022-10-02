@@ -60,7 +60,7 @@ namespace LudumDare51.Infrastructure
         private void Start()
         {
             var levelInteractor = InteractorServiceLocator.GetInstance().GetService<LevelInteractor>();
-            levelInteractor.LoadNextLevel();
+            levelInteractor.LoadCurrentLevel();
         }
     }
 

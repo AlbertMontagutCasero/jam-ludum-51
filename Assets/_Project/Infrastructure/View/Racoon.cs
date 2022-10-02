@@ -23,7 +23,6 @@ namespace LudumDare51.Infrastructure
 
         private void OnTriggerEnter2D(Collider2D col)
         {
-            Debug.Log("INSIDE");
             this.isInside = true;
 
             var catchRacoonInteractor = InteractorServiceLocator.GetInstance().GetService<CatchRacoonInteractor>();
@@ -32,8 +31,6 @@ namespace LudumDare51.Infrastructure
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            Debug.Log("OUTSIDE");
-
             this.isInside = false;
             
             

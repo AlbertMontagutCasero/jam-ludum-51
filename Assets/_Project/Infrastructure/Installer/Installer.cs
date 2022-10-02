@@ -7,29 +7,19 @@ namespace LudumDare51.Infrastructure.Installer
 {
     public class Installer: MonoBehaviour
     {
-        [SerializeField] private CommandsConfiguration commandsConfiguration;
-        [SerializeField] private LevelTextureMapperConfiguration levelTextureMapperConfiguration;
-        [SerializeField] private CosmeticConfigurationList cosmeticConfigurationList;
-        
+
         
         private void Awake()
         {
             // DOMAIN
             
             // DAO
-            DaoServiceLocator.GetInstance().RegisterService(new DaoCommandSelectedSupervisor(this.commandsConfiguration));
-            DaoServiceLocator.GetInstance().RegisterService(new DaoLevelTextureMapperConfiguration(this.levelTextureMapperConfiguration));
-            DaoServiceLocator.GetInstance().RegisterService(new DaoLevel(this.cosmeticConfigurationList));
-            
+            // DaoServiceLocator.GetInstance().RegisterService(new DaoCommandSelectedSupervisor(this.commandsConfiguration));
+
             // INTERACTOR
-            InteractorServiceLocator.GetInstance().RegisterService(new AddCommandInteractor());
-            InteractorServiceLocator.GetInstance().RegisterService(new GetCommandConfigurationInteractor());
-            InteractorServiceLocator.GetInstance().RegisterService(new RemoveSelectedCommandsInteractor());
-            InteractorServiceLocator.GetInstance().RegisterService(new PlayInteractor());
-            InteractorServiceLocator.GetInstance().RegisterService(new LevelInteractor());
+            // InteractorServiceLocator.GetInstance().RegisterService(new AddCommandInteractor());
 
             // View
-            new GameObject("LevelView").AddComponent<LevelView>();
 
         }
     }

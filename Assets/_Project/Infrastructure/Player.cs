@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace _Project.Infrastructure
 {
-    public class PlayerMovement : MonoBehaviour
+    public class Player : MonoBehaviour
     {
         private Rigidbody2D body;
 

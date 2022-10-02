@@ -21,8 +21,15 @@ namespace LudumDare51.Infrastructure
             GameSignals.OnGameplayStarts += OnGameplayStarts;
 
             GameSignals.OnGameplayDataUpdate += this.OnGameplayDataUpdate;
+            GameSignals.OnTimePenalization += this.OnTimePenalization;
             catchRacoonButton.onClick.AddListener(this.OnCatchRacoonButtonClick);
         }
+
+        private void OnTimePenalization(float penalizationAmount)
+        {
+            Debug.Log($"TIME PENALIZATION {penalizationAmount}");
+        }
+
 
         private void OnGameplayStarts(GameDataDao gameDataDao)
         {
@@ -32,7 +39,8 @@ namespace LudumDare51.Infrastructure
 
         private void OnCatchRacoonButtonClick()
         {
-            Debug.Log("RACOON CATCH BUTTON CLICKED");
+            var catchRacoonInteractor = InteractorServiceLocator.GetInstance().GetService<CatchRacoonInteractor>();
+            catchRacoonInteractor.Catch();
         }
 
         private void OnGameplayDataUpdate(GameDataDao gameplayDataResponse)

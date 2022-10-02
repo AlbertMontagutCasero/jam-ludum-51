@@ -30,6 +30,7 @@ namespace LudumDare51.Infrastructure.Installer
             // INTERACTOR
             InteractorServiceLocator.GetInstance().RegisterService(new StartGameplayInteractor());
             InteractorServiceLocator.GetInstance().RegisterService(new AddTimeInteractor());
+            InteractorServiceLocator.GetInstance().RegisterService(new CatchRacoonInteractor());
 
             // View
             

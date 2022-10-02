@@ -6,6 +6,7 @@ namespace LudumDare51.Infrastructure
     public class GameplayConfiguration: ScriptableObject
     {
         public int maxRacoonsToCatch;
-        public int numberOfTry;
+        public float timePenalizationByMissingCatch = 10f;
+        
     }
 }

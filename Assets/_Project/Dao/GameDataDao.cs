@@ -25,5 +25,10 @@ namespace LudumDare51.Dao
                 this.remainingSecondsToClue += 10;
             }
         }
+
+        public void AddTimePenalization()
+        {
+            this.totalTimeSeconds += this.gameplayConfiguration.timePenalizationByMissingCatch;
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace LudumDare51.Interactor
         public static Action OnCreated;
         
         // GAME
+        public static event Action<GameplayDataResponse> OnGameplayDataUpdate;
     }
 }

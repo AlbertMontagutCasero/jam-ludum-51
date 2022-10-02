@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.Globalization;
+using DG.Tweening;
 using LudumDare51.Dao;
 using LudumDare51.Interactor;
 using TMPro;
@@ -9,12 +11,14 @@ namespace LudumDare51.Infrastructure
 {
     public class GameplayUI : MonoBehaviour
     {
-        public TextMeshProUGUI remainingTriesText;
         public TextMeshProUGUI remainingSecondsToClueText;
         public TextMeshProUGUI racoonsCaughtText;
         public TextMeshProUGUI racoonsToCatchText;
         public TextMeshProUGUI totalTimeText;
+        public TextMeshProUGUI timePenalizationNotificationText;
         public Button catchRacoonButton;
+
+        private List<Tween> tweens;
 
         private void Awake()
         {
@@ -23,17 +27,53 @@ namespace LudumDare51.Infrastructure
             GameSignals.OnGameplayDataUpdate += this.OnGameplayDataUpdate;
             GameSignals.OnTimePenalization += this.OnTimePenalization;
             catchRacoonButton.onClick.AddListener(this.OnCatchRacoonButtonClick);
+
+            this.tweens = new();
+        }
+
+        private void Start()
+        {
+            this.timePenalizationNotificationText.gameObject.SetActive(false);
         }
 
         private void OnTimePenalization(float penalizationAmount)
         {
-            Debug.Log($"TIME PENALIZATION {penalizationAmount}");
+            this.RemoveTimePenalizationTweens();
+
+            this.timePenalizationNotificationText.alpha = 0;
+            var rectTransformAnchoredPosition = this.timePenalizationNotificationText.rectTransform.anchoredPosition;
+            rectTransformAnchoredPosition.y = 0;
+            this.timePenalizationNotificationText.rectTransform.anchoredPosition = rectTransformAnchoredPosition;
+            this.timePenalizationNotificationText.SetText($"+{penalizationAmount}");
+            this.timePenalizationNotificationText.gameObject.SetActive(true);
+            var moveTween = this.timePenalizationNotificationText.rectTransform.DOAnchorPosY(100f, 0.7f).SetEase(Ease.OutBack);
+            var alphaTween = this.timePenalizationNotificationText.DOFade(1, 0.7f).SetEase(Ease.OutBack);
+            alphaTween.OnComplete(() =>
+            {
+                this.timePenalizationNotificationText.alpha = 0;
+                this.timePenalizationNotificationText.gameObject.SetActive(false);
+                this.tweens.Remove(alphaTween);
+                this.RemoveTimePenalizationTweens();
+            });
+
+            this.tweens.Add(moveTween);
+            this.tweens.Add(alphaTween);
+        }
+
+        private void RemoveTimePenalizationTweens()
+        {
+            for (var i = this.tweens.Count - 1; i >= 0; i--)
+            {
+                var currentTween = this.tweens[0];
+                this.tweens.Remove(currentTween);
+                currentTween.Complete();
+            }
         }
 
 
         private void OnGameplayStarts(GameDataDao gameDataDao)
         {
-            this.racoonsToCatchText.text = gameDataDao.gameplayConfiguration.maxRacoonsToCatch.ToString();
+            this.racoonsToCatchText.text = "/" + gameDataDao.gameplayConfiguration.maxRacoonsToCatch.ToString();
             this.UpdateData(gameDataDao);
         }
 
@@ -50,7 +90,6 @@ namespace LudumDare51.Infrastructure
 
         private void UpdateData(GameDataDao gameplayDataResponse)
         {
-            this.remainingTriesText.text = gameplayDataResponse.remainingTries.ToString();
             this.remainingSecondsToClueText.text =
                 Mathf.CeilToInt(gameplayDataResponse.remainingSecondsToClue).ToString();
             this.racoonsCaughtText.text = gameplayDataResponse.racoonsCaught.ToString();

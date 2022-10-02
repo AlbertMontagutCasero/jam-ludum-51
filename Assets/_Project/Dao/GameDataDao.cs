@@ -4,7 +4,6 @@ namespace LudumDare51.Dao
 {
     public class GameDataDao: Dao
     {
-        public int remainingTries;
         public float remainingSecondsToClue;
         public float totalTimeSeconds;
         public int racoonsCaught;

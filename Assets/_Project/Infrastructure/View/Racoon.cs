@@ -10,7 +10,12 @@ namespace LudumDare51.Infrastructure
 
         private void Awake()
         {
-            GameSignals.OnRacoonCaught += OnRacoonCaught;
+            GameSignals.OnRacoonCaught += this.OnRacoonCaught;
+        }
+
+        private void OnDestroy()
+        {
+            GameSignals.OnRacoonCaught -= this.OnRacoonCaught;
         }
 
         private void OnRacoonCaught()

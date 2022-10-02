@@ -4,16 +4,16 @@ namespace LudumDare51.Domain
     {
         private static FloorId[][] floorIds = new FloorId[MapSize.Size][]
         {
-            new FloorId[MapSize.Size] { FloorId.Wood, FloorId.Bath, FloorId.Wood, FloorId.Bath, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Bath },
-            new FloorId[MapSize.Size] { FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood },
-            new FloorId[MapSize.Size] { FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood },
-            new FloorId[MapSize.Size] { FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood },
-            new FloorId[MapSize.Size] { FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood },
-            new FloorId[MapSize.Size] { FloorId.Bath, FloorId.Bath, FloorId.Bath, FloorId.Bath, FloorId.Bath, FloorId.Bath, FloorId.Bath, FloorId.Bath, FloorId.Bath, FloorId.Bath },
-            new FloorId[MapSize.Size] { FloorId.Bath, FloorId.Bath, FloorId.Bath, FloorId.Bath, FloorId.Bath, FloorId.Bath, FloorId.Bath, FloorId.Bath, FloorId.Bath, FloorId.Bath },
-            new FloorId[MapSize.Size] { FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood },
-            new FloorId[MapSize.Size] { FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood },
-            new FloorId[MapSize.Size] { FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Bath, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood, FloorId.Wood },
+            new FloorId[MapSize.Size] { FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling },
+            new FloorId[MapSize.Size] { FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling },
+            new FloorId[MapSize.Size] { FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling },
+            new FloorId[MapSize.Size] { FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling, FloorId.CeilingTop, FloorId.CeilingTop, FloorId.CeilingTop, FloorId.CeilingTop, FloorId.CeilingTop, FloorId.Ceiling, FloorId.Ceiling },
+            new FloorId[MapSize.Size] { FloorId.Ceiling, FloorId.CeilingTop, FloorId.Cornertopleft, FloorId.Wall, FloorId.Wall, FloorId.Door, FloorId.Wall, FloorId.Wall, FloorId.Cornertopright, FloorId.Ceiling },
+            new FloorId[MapSize.Size] { FloorId.Ceilingleft, FloorId.Wall, FloorId.Wall, FloorId.Kitchen, FloorId.Kitchen2, FloorId.Kitchen, FloorId.Kitchen2, FloorId.Kitchen, FloorId.Kitchen2, FloorId.Ceilingright },
+            new FloorId[MapSize.Size] { FloorId.Ceilingleft, FloorId.Kitchen2, FloorId.Kitchen, FloorId.Kitchen2, FloorId.Kitchen, FloorId.Kitchen2, FloorId.Kitchen, FloorId.Kitchen2, FloorId.Kitchen, FloorId.Ceilingright },
+            new FloorId[MapSize.Size] { FloorId.Ceilingleft, FloorId.Kitchen, FloorId.Kitchen2, FloorId.Kitchen, FloorId.Kitchen2, FloorId.Kitchen, FloorId.Kitchen2, FloorId.Kitchen, FloorId.Kitchen2, FloorId.Ceilingright },
+            new FloorId[MapSize.Size] { FloorId.Ceilingleft, FloorId.Kitchen2, FloorId.Kitchen, FloorId.Kitchen2, FloorId.Kitchen, FloorId.Kitchen2, FloorId.Kitchen, FloorId.Cornerbotright, FloorId.Ceilingbot, FloorId.Ceiling },
+            new FloorId[MapSize.Size] { FloorId.Ceilingleft, FloorId.Kitchen, FloorId.Kitchen2, FloorId.Kitchen, FloorId.Kitchen2, FloorId.Kitchen, FloorId.Cornerbotright, FloorId.Ceiling, FloorId.Ceiling, FloorId.Ceiling },
         };
         
         private static CosmeticId[][] cosmeticIds = new CosmeticId[MapSize.Size][]

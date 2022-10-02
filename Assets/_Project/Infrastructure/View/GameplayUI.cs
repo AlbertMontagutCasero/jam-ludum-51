@@ -1,3 +1,5 @@
+using System.Globalization;
+using LudumDare51.Dao;
 using LudumDare51.Interactor;
 using TMPro;
 using UnityEngine;
@@ -5,17 +7,27 @@ using UnityEngine.UI;
 
 namespace LudumDare51.Infrastructure
 {
-    public class GameplayUI: MonoBehaviour
+    public class GameplayUI : MonoBehaviour
     {
         public TextMeshProUGUI remainingTriesText;
-        public TextMeshProUGUI remainingSeconds;
-        public TextMeshProUGUI racoonsCaught;
+        public TextMeshProUGUI remainingSecondsToClueText;
+        public TextMeshProUGUI racoonsCaughtText;
+        public TextMeshProUGUI racoonsToCatchText;
+        public TextMeshProUGUI totalTimeText;
         public Button catchRacoonButton;
 
         private void Awake()
         {
+            GameSignals.OnGameplayStarts += OnGameplayStarts;
+
             GameSignals.OnGameplayDataUpdate += this.OnGameplayDataUpdate;
             catchRacoonButton.onClick.AddListener(this.OnCatchRacoonButtonClick);
+        }
+
+        private void OnGameplayStarts(GameDataDao gameDataDao)
+        {
+            this.racoonsToCatchText.text = gameDataDao.gameplayConfiguration.maxRacoonsToCatch.ToString();
+            this.UpdateData(gameDataDao);
         }
 
         private void OnCatchRacoonButtonClick()
@@ -23,11 +35,26 @@ namespace LudumDare51.Infrastructure
             Debug.Log("RACOON CATCH BUTTON CLICKED");
         }
 
-        private void OnGameplayDataUpdate(GameplayDataResponse gameplayDataResponse)
+        private void OnGameplayDataUpdate(GameDataDao gameplayDataResponse)
         {
-            this.remainingTriesText.text = gameplayDataResponse.remainingTry.ToString();
-            this.remainingSeconds.text = Mathf.CeilToInt(gameplayDataResponse.remainingSeconds).ToString();
-            this.racoonsCaught.text = gameplayDataResponse.racoonsCaught.ToString();
+            this.UpdateData(gameplayDataResponse);
+        }
+
+        private void UpdateData(GameDataDao gameplayDataResponse)
+        {
+            this.remainingTriesText.text = gameplayDataResponse.remainingTries.ToString();
+            this.remainingSecondsToClueText.text =
+                Mathf.CeilToInt(gameplayDataResponse.remainingSecondsToClue).ToString();
+            this.racoonsCaughtText.text = gameplayDataResponse.racoonsCaught.ToString();
+            var totalTime = this.GetAs2Decimals(gameplayDataResponse.totalTimeSeconds)
+                .ToString(CultureInfo.InvariantCulture);
+            this.totalTimeText.text = totalTime;
+        }
+
+        private float GetAs2Decimals(float time)
+        {
+            int removedDecimals = (int)(time * 100);
+            return (float)(removedDecimals * 0.01);
         }
     }
 }

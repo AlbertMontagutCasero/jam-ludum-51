@@ -10,6 +10,7 @@ namespace LudumDare51.Infrastructure.Installer
         public Player playerPrefab;
         public Camera cameraPrefab;
         public GameObject mapPrefab;
+        public GameplayConfiguration gameplayConfiguration;
         
         
         private void Awake()
@@ -24,12 +25,15 @@ namespace LudumDare51.Infrastructure.Installer
             DaoServiceLocator.GetInstance().RegisterService(new PlayerDao(player));
             DaoServiceLocator.GetInstance().RegisterService(new CameraDao(gameCamera));
             DaoServiceLocator.GetInstance().RegisterService(new MapDao(map));
+            DaoServiceLocator.GetInstance().RegisterService(new GameDataDao(this.gameplayConfiguration));
             
-
             // INTERACTOR
             InteractorServiceLocator.GetInstance().RegisterService(new StartGameplayInteractor());
+            InteractorServiceLocator.GetInstance().RegisterService(new AddTimeInteractor());
 
             // View
+            
+            // Should be instantiated when 
             new GameObject("StartGameView").AddComponent<StartGameView>();
         }
     }

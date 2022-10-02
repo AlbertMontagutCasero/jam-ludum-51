@@ -1,4 +1,4 @@
-using _Project.Infrastructure;
+using LudumDare51.Infrastructure;
 
 namespace LudumDare51.Dao
 {

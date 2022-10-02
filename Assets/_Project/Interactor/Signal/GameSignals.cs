@@ -1,4 +1,5 @@
 using System;
+using LudumDare51.Dao;
 
 namespace LudumDare51.Interactor
 {
@@ -9,6 +10,8 @@ namespace LudumDare51.Interactor
         public static Action OnCreated;
         
         // GAME
-        public static event Action<GameplayDataResponse> OnGameplayDataUpdate;
+        public static Action<GameDataDao> OnGameplayDataUpdate;
+        public static Action<GameDataDao> OnGameplayStarts;
+        public static Action<GameDataDao> OnGameplayFinishes;
     }
 }

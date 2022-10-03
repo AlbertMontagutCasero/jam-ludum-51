@@ -4,6 +4,11 @@ namespace LudumDare51.Interactor
 {
     public class StartGameplayInteractor: Interactor
     {
+        public void StartTutorial()
+        {
+            GameSignals.OnStartTutorial?.Invoke();
+        }
+        
         public void StartGame()
         {
             var cameraDao = DaoServiceLocator.GetInstance().GetService<CameraDao>();

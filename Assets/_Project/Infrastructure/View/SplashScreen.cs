@@ -28,7 +28,7 @@ namespace LudumDare51.Infrastructure
         private void OnPlayButtonClick()
         {
             var startGameplayInteractor = InteractorServiceLocator.GetInstance().GetService<StartGameplayInteractor>();
-            startGameplayInteractor.StartGame();
+            startGameplayInteractor.StartTutorial();
         }
     }
 }

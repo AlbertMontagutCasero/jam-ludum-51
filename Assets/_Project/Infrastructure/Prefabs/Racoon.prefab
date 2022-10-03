@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5982146720398786424}
   - component: {fileID: 5982146720398786427}
-  - component: {fileID: 5982146720398786426}
   - component: {fileID: 5982146720398786425}
+  - component: {fileID: 4597923063832374147}
   m_Layer: 0
   m_Name: Racoon
   m_TagString: Untagged
@@ -86,7 +86,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5982146720398786426
+--- !u!114 &5982146720398786425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5982146720398786429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d33aef3b82b4a23833098658cc1d805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider2D: {fileID: 4597923063832374147}
+--- !u!61 &4597923063832374147
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,15 +125,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 6}
   m_EdgeRadius: 0
---- !u!114 &5982146720398786425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5982146720398786429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d33aef3b82b4a23833098658cc1d805, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

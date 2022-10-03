@@ -1,4 +1,3 @@
-using System;
 using LudumDare51.Dao;
 using LudumDare51.Interactor;
 using UnityEngine;
@@ -15,7 +14,6 @@ namespace LudumDare51.Infrastructure
         private void Awake()
         {
             GameSignals.OnGameplayStarts += OnGameplayStarts;
-            GameSignals.OnGameplayFinishes += OnGameplayFinishes;
             GameSignals.OnRacoonCaught += OnRacoonCaught;
         }
 
@@ -44,11 +42,6 @@ namespace LudumDare51.Infrastructure
             }
         }
 
-        private void OnGameplayFinishes(GameDataDao obj)
-        {
-            this.StopAllMusics();
-        }
-
         private void StopAllMusics()
         {
             this.baseAudioSource.Stop();
@@ -56,6 +49,8 @@ namespace LudumDare51.Infrastructure
 
         private void OnGameplayStarts(GameDataDao obj)
         {
+            this.StopAllMusics();
+
             this.baseAudioSource.clip = this.baseMusic;
             this.baseAudioSource.time = 0;
             this.baseAudioSource.Play();

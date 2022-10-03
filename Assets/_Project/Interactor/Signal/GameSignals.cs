@@ -16,5 +16,6 @@ namespace LudumDare51.Interactor
         public static Action<float> OnTimePenalization;
         public static Action OnRacoonCaught;
         public static Action<int> OnCheckClue;
+        public static Action OnStartTutorial;
     }
 }

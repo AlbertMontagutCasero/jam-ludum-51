@@ -2,7 +2,6 @@ using LudumDare51.Dao;
 using LudumDare51.Interactor;
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
-using Vector3 = UnityEngine.Vector3;
 
 namespace LudumDare51.Infrastructure
 {
@@ -11,8 +10,6 @@ namespace LudumDare51.Infrastructure
         private Rigidbody2D body;
         private Animator animator;
 
-        private string lastAnimation = "idle";
-        
         public float runSpeed = 0.3f;
         public Vector2 startPosition = Vector2.zero;
         private Vector2 inputDirection;

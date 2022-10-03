@@ -1,4 +1,4 @@
-using System;
+using LudumDare51.Dao;
 using LudumDare51.Interactor;
 using UnityEngine;
 
@@ -7,10 +7,22 @@ namespace LudumDare51.Infrastructure
     public class Racoon: MonoBehaviour
     {
         private bool isInside;
+        public BoxCollider2D boxCollider2D;
 
         private void Awake()
         {
             GameSignals.OnRacoonCaught += this.OnRacoonCaught;
+            GameSignals.OnGameplayStarts += OnGameplayStarts;
+        }
+
+        private void OnGameplayStarts(GameDataDao obj)
+        {
+            this.boxCollider2D.enabled = true;
+        }
+
+        private void Start()
+        {
+            this.boxCollider2D.enabled = false;
         }
 
         private void OnDestroy()
@@ -22,7 +34,7 @@ namespace LudumDare51.Infrastructure
         {
             if (this.isInside)
             {
-                Destroy(this.gameObject);
+                this.boxCollider2D.enabled = false;
             }
         }
 

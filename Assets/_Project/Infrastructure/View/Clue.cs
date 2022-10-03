@@ -1,3 +1,4 @@
+using LudumDare51.Dao;
 using LudumDare51.Interactor;
 using UnityEngine;
 
@@ -10,7 +11,22 @@ namespace LudumDare51.Infrastructure
 
         private void Awake()
         {
+            GameSignals.OnGameplayStarts += OnGameplayStarts;
+            GameSignals.OnGameplayFinishes += OnGameplayFinishes;
             GameSignals.OnCheckClue += this.OnCheckClue;
+        }
+
+        private void OnGameplayFinishes(GameDataDao obj)
+        {
+            this.clueGameObject.SetActive(false);
+        }
+
+        private void OnGameplayStarts(GameDataDao obj)
+        {
+            if (this.iterationToShow == 0)
+            {
+                this.ShowClue();
+            }
         }
 
         private void OnDestroy()
@@ -20,6 +36,8 @@ namespace LudumDare51.Infrastructure
 
         private void Start()
         {
+            this.clueGameObject.SetActive(false);
+
             if (this.iterationToShow == 0)
             {
                 this.ShowClue();

@@ -7,6 +7,5 @@ namespace LudumDare51.Infrastructure
     {
         public int maxRacoonsToCatch;
         public float timePenalizationByMissingCatch = 10f;
-        
     }
 }

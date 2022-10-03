@@ -23,13 +23,7 @@ namespace LudumDare51.Infrastructure
         {
             this.isEnabled = true;
         }
-
-        private void Start()
-        {
-            var startGameplayInteractor = InteractorServiceLocator.GetInstance().GetService<StartGameplayInteractor>();
-            startGameplayInteractor.StartGame();
-        }
-
+        
         private void Update()
         {
             if (this.isEnabled)

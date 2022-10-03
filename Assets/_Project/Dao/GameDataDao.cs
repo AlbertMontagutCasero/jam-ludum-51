@@ -35,5 +35,10 @@ namespace LudumDare51.Dao
         {
             this.totalTimeSeconds += this.gameplayConfiguration.timePenalizationByMissingCatch;
         }
+
+        public bool IsGameCompleted()
+        {
+            return this.racoonsCaught >= this.gameplayConfiguration.maxRacoonsToCatch;
+        }
     }
 }

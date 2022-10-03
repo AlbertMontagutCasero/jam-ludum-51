@@ -15,6 +15,11 @@ namespace LudumDare51.Interactor
             camera.Follow = player.transform;
 
             var gameDataDao = DaoServiceLocator.GetInstance().GetService<GameDataDao>();
+            gameDataDao.clueGiven = 0;
+            gameDataDao.racoonsCaught = 0;
+            gameDataDao.totalTimeSeconds = 0;
+            gameDataDao.remainingSecondsToClue = 10;
+            
             GameSignals.OnGameplayStarts?.Invoke(gameDataDao);
         }
     }

@@ -17,12 +17,14 @@ namespace LudumDare51.Infrastructure
         public TextMeshProUGUI totalTimeText;
         public TextMeshProUGUI timePenalizationNotificationText;
         public Button catchRacoonButton;
+        public GameObject wrapper;
 
         private List<Tween> tweens;
 
         private void Awake()
         {
             GameSignals.OnGameplayStarts += OnGameplayStarts;
+            GameSignals.OnGameplayFinishes += this.OnGameplayFinishes;
 
             GameSignals.OnGameplayDataUpdate += this.OnGameplayDataUpdate;
             GameSignals.OnTimePenalization += this.OnTimePenalization;
@@ -31,8 +33,14 @@ namespace LudumDare51.Infrastructure
             this.tweens = new();
         }
 
+        private void OnGameplayFinishes(GameDataDao obj)
+        {
+            this.wrapper.SetActive(false);
+        }
+
         private void Start()
         {
+            this.wrapper.SetActive(false);
             this.timePenalizationNotificationText.gameObject.SetActive(false);
         }
 
@@ -73,6 +81,7 @@ namespace LudumDare51.Infrastructure
 
         private void OnGameplayStarts(GameDataDao gameDataDao)
         {
+            this.wrapper.SetActive(true);
             this.racoonsToCatchText.text = "/" + gameDataDao.gameplayConfiguration.maxRacoonsToCatch.ToString();
             this.UpdateData(gameDataDao);
         }

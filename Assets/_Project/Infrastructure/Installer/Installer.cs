@@ -19,8 +19,7 @@ namespace LudumDare51.Infrastructure.Installer
             var player = Instantiate(this.playerPrefab);
             var gameCamera = Instantiate(this.cameraPrefab);
             var map = Instantiate(this.mapPrefab);
-
-
+            
             // DAO
             DaoServiceLocator.GetInstance().RegisterService(new PlayerDao(player));
             DaoServiceLocator.GetInstance().RegisterService(new CameraDao(gameCamera));
@@ -33,9 +32,6 @@ namespace LudumDare51.Infrastructure.Installer
             InteractorServiceLocator.GetInstance().RegisterService(new CatchRacoonInteractor());
 
             // View
-            
-            // Should be instantiated when 
-            new GameObject("StartGameView").AddComponent<StartGameView>();
         }
     }
 }

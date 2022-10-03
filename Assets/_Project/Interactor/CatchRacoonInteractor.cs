@@ -13,6 +13,11 @@ namespace LudumDare51.Interactor
             {
                 gameDataDao.racoonsCaught++;
                 GameSignals.OnRacoonCaught?.Invoke();
+
+                if (gameDataDao.IsGameCompleted())
+                {
+                    GameSignals.OnGameplayFinishes?.Invoke(gameDataDao);
+                }
             }
             else
             {

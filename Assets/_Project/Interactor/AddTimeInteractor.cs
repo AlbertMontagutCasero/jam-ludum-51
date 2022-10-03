@@ -1,5 +1,4 @@
 using LudumDare51.Dao;
-using UnityEngine;
 
 namespace LudumDare51.Interactor
 {
@@ -13,11 +12,9 @@ namespace LudumDare51.Interactor
             gameDataDao.AddTime(elapsedSeconds);
             if (gameDataDao.shouldGiveAnotherClue)
             {
-                Debug.Log("SHOULD GIVE CLUE");
                 GameSignals.OnCheckClue?.Invoke(gameDataDao.clueGiven);
                 gameDataDao.shouldGiveAnotherClue = false;
             }
-            
 
             GameSignals.OnGameplayDataUpdate.Invoke(gameDataDao);
         }

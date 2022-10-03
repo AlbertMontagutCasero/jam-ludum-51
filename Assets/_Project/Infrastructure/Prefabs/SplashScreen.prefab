@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 920825787393428829}
   - component: {fileID: 6357992011105114046}
   m_Layer: 5
-  m_Name: HelpMe
+  m_Name: HelpMetext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 2525069941884432296}
   - component: {fileID: 6090352220183347741}
   m_Layer: 5
-  m_Name: RetryText
+  m_Name: PlayText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 8214904706927345273}
   - component: {fileID: 6435663973355392139}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 1634265383750913649}
   - component: {fileID: 5175007226580132191}
   m_Layer: 5
-  m_Name: RetryButton
+  m_Name: PlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -825,7 +825,7 @@ GameObject:
   - component: {fileID: 8616087728176304122}
   - component: {fileID: 4484503941986537284}
   m_Layer: 5
-  m_Name: Image_01
+  m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

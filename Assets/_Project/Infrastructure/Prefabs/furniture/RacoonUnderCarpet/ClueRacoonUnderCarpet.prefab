@@ -159,7 +159,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2367806116115871576, guid: d1a0755b8a2e44cb78fe3bd50c5e5f80, type: 3}
       propertyPath: m_Name
-      value: Clue Variant
+      value: ClueRacoonUnderCarpet
       objectReference: {fileID: 0}
     - target: {fileID: 2367806116115871582, guid: d1a0755b8a2e44cb78fe3bd50c5e5f80, type: 3}
       propertyPath: m_RootOrder
@@ -211,7 +211,7 @@ PrefabInstance:
       objectReference: {fileID: 4432987963539919211}
     - target: {fileID: 2367806116115871583, guid: d1a0755b8a2e44cb78fe3bd50c5e5f80, type: 3}
       propertyPath: iterationToShow
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1a0755b8a2e44cb78fe3bd50c5e5f80, type: 3}

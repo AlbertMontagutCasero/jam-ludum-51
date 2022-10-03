@@ -265,6 +265,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map
       objectReference: {fileID: 0}
+    - target: {fileID: 8440028129967423289, guid: 30b46cb3b2f7246df803f0c921ac5f9d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8440028129967423291, guid: 30b46cb3b2f7246df803f0c921ac5f9d, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1018,10 +1022,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6324854937892252250, guid: d038f8f9efeb5416290e3ccf05952d01, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d038f8f9efeb5416290e3ccf05952d01, type: 3}
 --- !u!1001 &7489633311850029648
@@ -1031,10 +1031,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1375338148}
     m_Modifications:
-    - target: {fileID: 1158971362318802149, guid: 02649ba9568fc4b7280414874f5618ed, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7489633311524151989, guid: 02649ba9568fc4b7280414874f5618ed, type: 3}
       propertyPath: m_Name
       value: SplashScreen
@@ -1121,10 +1117,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7489633311524151990, guid: 02649ba9568fc4b7280414874f5618ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7840255319883318150, guid: 02649ba9568fc4b7280414874f5618ed, type: 3}
-      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

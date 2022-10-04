@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 7
-  startPosition: {x: -4, y: -14}
+  startPosition: {x: 3, y: -10}
 --- !u!95 &1409044416550867480
 Animator:
   serializedVersion: 4

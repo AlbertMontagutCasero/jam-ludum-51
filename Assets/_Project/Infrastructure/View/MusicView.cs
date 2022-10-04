@@ -10,11 +10,20 @@ namespace LudumDare51.Infrastructure
         public AudioClip baseMusic;
         public AudioClip racoonMusic1;
         public AudioClip racoonMusic2;
+        public AudioClip timePenalizationclip;
+        public AudioClip racoonCaughtClip;
 
         private void Awake()
         {
             GameSignals.OnGameplayStarts += OnGameplayStarts;
             GameSignals.OnRacoonCaught += OnRacoonCaught;
+            GameSignals.OnTimePenalization += OnTimePenalization;
+        }
+
+
+        private void OnTimePenalization(float obj)
+        {
+            this.baseAudioSource.PlayOneShot(timePenalizationclip);
         }
 
         private void Start()
@@ -24,6 +33,8 @@ namespace LudumDare51.Infrastructure
 
         private void OnRacoonCaught()
         {
+            this.baseAudioSource.PlayOneShot(this.racoonCaughtClip);
+
             if (this.baseAudioSource.clip == this.baseMusic)
             {
                 var time = this.baseAudioSource.time;
